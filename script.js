@@ -1,5 +1,11 @@
 const playlist = [
   {
+    title: "No Hay Condena",
+    artist: "La Feria Oficial",
+    src: "songs/Condena.mp3",
+    cover: "images/Condena.jpg"
+  },
+  {
     title: "Laberintos",
     artist: "La Feria Oficial/Majo y Dan",
     src: "songs/song25.mp3",
