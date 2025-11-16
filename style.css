@@ -1,0 +1,245 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: sans-serif;
+  background-image: url('images/image.png');
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centers content vertically too */
+
+  min-height: 100vh; /* ensures it always fills viewport height */
+  box-sizing: border-box;
+}
+
+.music-container {
+  display: flex;
+  align-items: flex-start; /* top align */
+  gap: 20px; /* space between playlist and player */
+}
+
+.player {
+  width: 400px;
+  height: 600px;
+  background: linear-gradient(to bottom,#3f3f56eb, #151520ed) ;
+  padding: 20px;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.title-cover {
+  display: flex;
+  gap: 150px;
+  justify-content: center; /* centers content horizontally */
+  align-items: center; /* centers content vertically i think */
+}
+
+.image-with-text {
+  text-align: center;
+  text-size-adjust: 500px;
+}
+
+.title-cover img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.now-playing {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.now-playing img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#seek-bar {
+  width: 100%;
+  margin: 15px 0;
+}
+
+#seek-bar,
+#volume {
+  -webkit-appearance: none;
+  height: 5px;
+  background: #555;
+  border-radius: 5px;
+  outline: none;
+}
+
+#seek-bar::-webkit-slider-thumb,
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#seek-bar::-moz-range-thumb,
+#volume::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: rgb(76, 76, 245);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+#playlist {
+  display: none;
+}
+
+
+#search-bar {
+  display:none;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1px;
+  margin: 10px 0;
+}
+
+.controls button,
+.icon-btn {
+  background: transparent;   /* no solid background */
+  border: none;
+  color: white;              /* icons/text stay visible */
+  cursor: pointer;
+  transition: transform 0.08s;  /* optional hover/press effect */
+  padding: 10px;
+  border-radius: 100px;
+}
+
+
+.icon-btn svg {
+  width: 23px;   /* bigger than default */
+  height: 23px;
+  display: block;
+}
+
+#prev svg {
+  transform: scaleX(-1);
+}
+
+#shuffle svg {
+  width: 29px;
+  height: 29px;
+}
+
+
+#repeat svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Make the Play/Pause button bigger */
+#play svg {
+  width: 70px;
+  height: 70px;
+}
+
+#play {
+  padding: 15px; /* a bit more space around the bigger icon */
+}
+#play {
+  /*background: #3b6842;*/
+  border-radius: 50%;
+  transition: transform 0.15s ease, background 0.2s;
+}
+
+#play:hover {
+  /*background: #4caf50;*/
+  transform: scale(1.1);
+}
+
+#play:active {
+  transform: scale(1.05);
+}
+
+
+/* hover + press visual */
+.icon-btn:hover { transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0); }
+
+/* active mode (repeat/shuffle) */
+.mode-active {
+  background: #49f56600;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+/* active mode (repeat/shuffle) */
+.controls button.mode-active {
+  background: #49f56600;
+  color: #49f566;
+  font-weight: bold;
+}
+
+.controls button:hover {
+  background: #66666600;
+}
+
+
+.time-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.volume-container {
+  display: none;
+}
+
+.volume-container input {
+  width: 100%;
+}
+
+#playlist li.active {
+  background-color: #2ecc71;
+  font-weight: bold;
+  color: black;
+}
+
+#playlist {
+  max-height: 513px;         /* Control how tall the playlist should be */
+  overflow-y: auto;          /* Enables vertical scrolling */
+  padding-right: 8px;
+  margin-top: 10px;
+  border: 9px solid #343d3f;    /* Optional: gives it a boundary */
+  border-radius: 6px;
+  background-color: #1a1a1a; /* Optional: matches dark themes */
+  scrollbar-width: thin;     /* Firefox support */
+  width: 325px; /* fixed width for playlist */
+}
+
+/* Optional scroll styling for WebKit (Chrome, Edge, etc.) */
+#playlist::-webkit-scrollbar {
+  width: 6px;
+}
+
+#playlist::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 3px;
+}
