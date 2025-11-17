@@ -104,7 +104,7 @@ const playlist = [
   {
     title: "Te Necesito",
     artist: "Los Hermanos Reyes de Guatemala",
-    src: "songs/Te Necesito.mp3",
+    src: "songs/Te necesito.mp3",
     cover: "images/Hay una ciudad.png"
   },
 ];
